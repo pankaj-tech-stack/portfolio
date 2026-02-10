@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pankaj Kumar | Portfolio</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,Arial}
+html{scroll-behavior:smooth}
+
+/* ===== REALISTIC BACKGROUND ===== */
+body{
+    min-height:100vh;
+    color:#fff;
+    background:
+      radial-gradient(600px circle at 10% 10%, rgba(255,180,120,.25), transparent 40%),
+      radial-gradient(800px circle at 90% 20%, rgba(120,160,255,.25), transparent 45%),
+      radial-gradient(700px circle at 50% 90%, rgba(200,120,255,.25), transparent 50%),
+      linear-gradient(120deg,#0b1020,#141a3a,#0b1020);
+    animation:bgFloat 18s ease-in-out infinite alternate;
+}
+
+/* subtle movement */
+@keyframes bgFloat{
+    0%{background-position:0% 0%,100% 0%,50% 100%,0% 0%}
+    100%{background-position:5% 10%,95% 15%,50% 95%,100% 100%}
+}
+
+/* grain for realism */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events:none;
+    z-index:0;
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:85%;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,.14);
+    backdrop-filter:blur(18px);
+    border-radius:50px;
+    z-index:10;
+}
+nav h2{font-weight:600}
+nav a{color:white;margin-left:20px;text-decoration:none;opacity:.85}
+nav a:hover{opacity:1}
+
+/* ===== SECTIONS ===== */
+section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:100px 10%;
+    position:relative;
+    z-index:1;
+}
+
+/* ===== POPUP GLASS ===== */
+.popup{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(28px);
+    border-radius:30px;
+    padding:50px;
+    max-width:900px;
+    width:100%;
+    box-shadow:0 30px 90px rgba(0,0,0,.45);
+    animation:popup 1.2s ease forwards;
+    opacity:0;
+    transform:translateY(40px);
+}
+@keyframes popup{
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== HERO ===== */
+.hero h1{font-size:52px}
+.hero span{
+    background:linear-gradient(45deg,#ffd200,#ff8a00);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+.hero p{
+    margin:20px 0;
+    max-width:620px;
+    line-height:1.85;
+    opacity:.95;
+}
+.hero a{
+    display:inline-block;
+    margin:12px 16px 0 0;
+    padding:14px 34px;
+    border-radius:45px;
+    text-decoration:none;
+    font-weight:600;
+    color:white;
+    transition:.3s;
+}
+.hero a:hover{transform:scale(1.08)}
+.btn-main{background:linear-gradient(45deg,#ff416c,#ff4b2b)}
+.btn-outline{border:2px solid rgba(255,255,255,.5)}
+
+/* ===== HEADINGS ===== */
+h2{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+/* ===== CARDS ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin-top:35px;
+}
+.card{
+    background:rgba(255,255,255,.16);
+    padding:30px;
+    border-radius:22px;
+    transition:.4s;
+}
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.45);
+}
+.card h3{color:#ffd200;margin-bottom:10px}
+
+/* ===== CONNECT ===== */
+.connect{text-align:center}
+.connect a{
+    display:inline-block;
+    margin:14px;
+    padding:16px 38px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    color:white;
+    transition:.3s;
+}
+.connect a:hover{
+    transform:scale(1.15);
+    box-shadow:0 0 28px rgba(255,255,255,.45);
+}
+.linkedin{background:linear-gradient(45deg,#0077b5,#00c6ff)}
+.github{background:linear-gradient(45deg,#24292e,#6e5494)}
+.leetcode{background:linear-gradient(45deg,#f7971e,#ffd200)}
+.email{background:linear-gradient(45deg,#00b09b,#96c93d)}
+
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:.65;
+    position:relative;
+    z-index:1;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<h2>Pankaj Kumar</h2>
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#more">More</a>
+<a href="#connect">Connect</a>
+</div>
+</nav>
+
+<section id="home">
+<div class="popup hero">
+<h1>Hi, I’m <span>Pankaj Kumar</span></h1>
+<p>
+B.Tech student focused on programming, problem-solving, and building clean,
+real-world software with modern design.
+</p>
+<a href="#connect" class="btn-main">Connect</a>
+<a href="#about" class="btn-outline">Explore</a>
+</div>
+</section>
+
+<section id="about">
+<div class="popup">
+<h2>About Me</h2>
+<p style="text-align:center;max-width:720px;margin:auto;line-height:1.9">
+I am a dedicated B.Tech student improving my skills in programming, data structures,
+and web development through consistent practice and projects.
+</p>
+
+<div class="cards">
+<div class="card">
+<h3>💻 Coding</h3>
+<p>C, C++, Python, DSA basics</p>
+</div>
+<div class="card">
+<h3>🧠 Problem Solving</h3>
+<p>Regular LeetCode & logic challenges</p>
+</div>
+<div class="card">
+<h3>🏐 Interests</h3>
+<p>Volleyball, teamwork, growth mindset</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="more">
+<div class="popup">
+<h2>More About Me</h2>
+<p style="text-align:center;max-width:760px;margin:auto;line-height:1.9">
+I value discipline, curiosity, and continuous learning. My goal is to become a strong
+software engineer who builds meaningful and scalable solutions.
+</p>
+</div>
+</section>
+
+<section id="connect">
+<div class="popup connect">
+<h2>Connect With Me</h2>
+<a href="https://www.linkedin.com/in/pankaj-kumar00/" class="linkedin" target="_blank">LinkedIn</a>
+<a href="https://github.com/pankaj-tech-stack" class="github" target="_blank">GitHub</a>
+<a href="https://leetcode.com/u/Pankaj_Byte/" class="leetcode" target="_blank">LeetCode</a>
+<a href="https://pankaj.25001176@kiet.edu" class="email">Email</a>
+</div>
+</section>
+
+<footer>
+ ✨
+</footer>
+
+</body>
+</html>
